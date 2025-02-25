@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+        nav {
+            background: #444;
+            padding: 10px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        main {
+            flex: 1;
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        section {
+            display: none;
+        }
+        section.active {
+            display: block;
+        }
+        .berita-img, .profile-img {
+            max-width: 200px;
+            height: auto;
+            display: block;
+            margin: 10px auto;
+            border-radius: 10px;
+        }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        #tentang {
+            background: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
+    <script>
+        function showSection(id) {
+            document.querySelectorAll("section").forEach(section => {
+                section.classList.remove("active");
+            });
+            setTimeout(() => {
+                document.getElementById(id).classList.add("active");
+            }, 100);
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Selamat Datang di Halaman Saya</h1>
+    </header>
+    <nav>
+        <a onclick="showSection('berita')">Berita</a>
+        <a onclick="showSection('tentang')">Tentang Saya</a>
+    </nav>
+    <main>
+        <section id="berita" class="active">
+            <h2 class="animated-text">Berita Sekitar Rumah</h2>
+            <p class="animated-text">Berita terbaru tentang kejadian di sekitar rumah Anda.</p>
+            <ul class="animated-text">
+                <li>
+                    <img src="kerja bakti.jpeg" alt="Kerja Bakti" class="berita-img"><br>
+                    <a>Warga mengadakan kerja bakti pada hari Minggu.</a>
+                </li>
+                <li>
+                    <img src="tanam pohon.jpg" alt="Penanaman Pohon" class="berita-img"><br>
+                    <a>Penanaman pohon di taman lingkungan.</a>
+                </li>
+            </ul>
+        </section>
+        <section id="tentang">
+            <h2 class="animated-text">Tentang Saya</h2>
+            <img src="pp gellael.jpg" alt="Foto Profil" class="profile-img animated-text">
+            <p class="animated-text">Halo, saya Ricardo Gellael. Saya seorang warga yang peduli dengan lingkungan sekitar saya.</p>
+            <p class="animated-text">Ikuti saya di media sosial:</p>
+            <div class="social-icons animated-text">
+                <a href="https://www.instagram.com/ricardo_gellael" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" width="24" height="24"> Instagram: ricardo_gellael
+                </a>
+                <br>
+                <a href="https://wa.me/6282311607227" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="24" height="24"> WhatsApp
+                </a>
+                <br>
+                <a href="https://github.com/ricardogellael" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub" width="24" height="24"> GitHub: ricardogellael
+                </a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Gellael Page. Semua Hak Dilindungi.</p>
+    </footer>
+</body>
+</html>
